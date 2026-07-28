@@ -1,1 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinicly · Privacy Policy for Doctors</title>
+<meta name="description" content="How Clinicly collects, uses, and protects information for licensed doctors using the Clinicly platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7F4;
+    --paper-raised:#FFFFFF;
+    --ink:#12262A;
+    --ink-soft:#3C5054;
+    --teal:#0D4A46;
+    --teal-deep:#082F2C;
+    --teal-tint:#E7EFEC;
+    --sage:#6E8F80;
+    --accent:#B8863B;
+    --accent-soft:#F3E7D2;
+    --line:#DCE2DD;
+    --line-strong:#C4CDC7;
+    --radius:2px;
+    --maxw:1180px;
+  }
 
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--teal); text-decoration-color:var(--line-strong); text-underline-offset:3px;}
+  a:hover{color:var(--accent);}
+  a:focus-visible, button:focus-visible, summary:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,247,244,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:var(--maxw); margin:0 auto;
+    padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px;
+  }
+  .brand{
+    display:flex; align-items:baseline; gap:9px;
+    font-family:'Fraunces', serif; font-weight:600; font-size:20px;
+    color:var(--teal-deep); text-decoration:none;
+  }
+  .brand:hover{color:var(--teal-deep);}
+  .brand-mark{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--accent);
+    display:inline-block;
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  .brand-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--sage);
+    border-left:1px solid var(--line-strong);
+    padding-left:9px;
+  }
+  .topbar-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px; color:var(--ink-soft);
+    display:flex; align-items:center; gap:8px;
+  }
+  .topbar-meta .dot{width:6px;height:6px;border-radius:50%;background:#3E8E63; display:inline-block;}
+
+  .nav-toggle{
+    display:none;
+    background:var(--paper-raised); border:1px solid var(--line-strong);
+    border-radius:var(--radius); padding:8px 12px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.04em;
+    color:var(--teal-deep); cursor:pointer;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    max-width:var(--maxw); margin:0 auto;
+    padding:76px 28px 0;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--accent);
+    display:flex; align-items:center; gap:10px;
+    margin:0 0 22px;
+  }
+  .eyebrow::before{
+    content:''; width:26px; height:1px; background:var(--accent);
+  }
+  h1.hero-title{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(38px, 5.4vw, 64px);
+    line-height:1.06;
+    letter-spacing:-0.01em;
+    margin:0 0 22px;
+    max-width:15ch;
+    color:var(--teal-deep);
+  }
+  .hero-title em{
+    font-style:italic; color:var(--accent); font-weight:500;
+  }
+  .hero-sub{
+    font-size:18px; color:var(--ink-soft);
+    max-width:56ch; margin:0 0 40px;
+  }
+
+  /* pulse divider */
+  .pulse{
+    width:100%; height:46px; margin-bottom:8px;
+    overflow:visible;
+  }
+  .pulse path{
+    fill:none; stroke:var(--teal); stroke-width:1.6;
+    stroke-linecap:round; stroke-linejoin:round;
+  }
+  .pulse-dot{
+    fill:var(--accent);
+  }
+
+  /* ---------- vitals strip ---------- */
+  .vitals{
+    max-width:var(--maxw); margin:0 auto;
+    padding:0 28px 64px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  .vital{
+    background:var(--paper-raised);
+    padding:22px 22px 20px;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .vital-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px; letter-spacing:0.09em; text-transform:uppercase;
+    color:var(--sage);
+  }
+  .vital-value{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size:22px; color:var(--teal-deep);
+    line-height:1.15;
+  }
+  .vital-value.accent{color:var(--accent);}
+  .vital-note{font-size:12.5px; color:var(--ink-soft); line-height:1.45;}
+
+  /* ---------- layout ---------- */
+  .layout{
+    max-width:var(--maxw); margin:0 auto;
+    padding:0 28px 100px;
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:64px;
+    align-items:start;
+  }
+
+  /* TOC */
+  .toc{
+    position:sticky; top:78px;
+    max-height:calc(100vh - 100px);
+    overflow-y:auto;
+    padding-right:6px;
+  }
+  .toc-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--sage); margin:0 0 14px;
+  }
+  .toc ol{
+    list-style:none; margin:0; padding:0;
+    border-left:1px solid var(--line);
+  }
+  .toc li{margin:0;}
+  .toc a{
+    display:block;
+    font-size:13.5px; color:var(--ink-soft);
+    text-decoration:none;
+    padding:7px 0 7px 16px;
+    border-left:2px solid transparent;
+    margin-left:-1px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .toc a .num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--sage); margin-right:8px; font-size:12px;
+  }
+  .toc a:hover{color:var(--teal-deep);}
+  .toc a.active{
+    color:var(--teal-deep); font-weight:500;
+    border-left-color:var(--accent);
+  }
+  .toc a.active .num{color:var(--accent);}
+
+  /* content */
+  .content{max-width:720px;}
+  .policy-section{
+    padding:40px 0;
+    border-top:1px solid var(--line);
+    opacity:0; transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .policy-section.in-view{opacity:1; transform:translateY(0);}
+  .policy-section:first-child{border-top:none; padding-top:0;}
+
+  .sec-head{
+    display:flex; align-items:baseline; gap:14px;
+    margin:0 0 18px;
+  }
+  .sec-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; color:var(--accent);
+    background:var(--accent-soft);
+    padding:3px 8px;
+    border-radius:var(--radius);
+    flex-shrink:0;
+  }
+  h2.sec-title{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size:26px; color:var(--teal-deep);
+    margin:0; line-height:1.25;
+  }
+  .content p{
+    margin:0 0 16px; color:var(--ink);
+    font-size:15.5px;
+  }
+  .content h3{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600; font-size:15px;
+    color:var(--teal);
+    margin:26px 0 10px;
+    display:flex; align-items:center; gap:9px;
+  }
+  .content h3::before{
+    content:''; width:14px; height:1px; background:var(--sage);
+  }
+  .content ul{
+    margin:0 0 18px; padding:0; list-style:none;
+  }
+  .content ul li{
+    position:relative;
+    padding:0 0 10px 22px;
+    font-size:15.5px; color:var(--ink);
+  }
+  .content ul li::before{
+    content:''; position:absolute; left:2px; top:9px;
+    width:6px; height:6px; background:var(--teal-tint);
+    border:1.4px solid var(--teal);
+    border-radius:50%;
+  }
+  .content ul li strong{color:var(--teal-deep); font-weight:600;}
+
+  .callout{
+    background:var(--teal-tint);
+    border-left:3px solid var(--teal);
+    padding:16px 20px;
+    font-size:14.5px; color:var(--ink-soft);
+    margin:20px 0;
+    border-radius:0 var(--radius) var(--radius) 0;
+  }
+  .callout strong{color:var(--teal-deep);}
+
+  .placeholder{
+    background:var(--accent-soft); color:#7A5A20;
+    padding:1px 6px; border-radius:var(--radius);
+    font-family:'IBM Plex Mono', monospace; font-size:0.88em;
+  }
+
+  /* table-ish share list */
+  .share-grid{
+    display:grid; gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+    margin:18px 0 22px;
+  }
+  .share-row{
+    background:var(--paper-raised);
+    padding:14px 18px;
+    display:grid; grid-template-columns:170px 1fr; gap:16px;
+  }
+  .share-row .who{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; color:var(--teal); font-weight:500;
+    padding-top:2px;
+  }
+  .share-row .what{font-size:14.5px; color:var(--ink);}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--teal-deep);
+    color:#DDEAE6;
+  }
+  .footer-inner{
+    max-width:var(--maxw); margin:0 auto;
+    padding:52px 28px;
+    display:flex; justify-content:space-between; align-items:flex-start;
+    gap:32px; flex-wrap:wrap;
+  }
+  .footer-brand{
+    font-family:'Fraunces', serif; font-weight:600; font-size:20px;
+    color:#F6F7F4; margin:0 0 8px;
+  }
+  .footer-inner p{margin:0; font-size:13.5px; color:#9FBDB5; max-width:40ch;}
+  .footer-contact{font-size:14px;}
+  .footer-contact a{color:#F3E7D2; text-decoration-color:rgba(243,231,210,0.4);}
+  .footer-links{display:flex; flex-direction:column; gap:8px; align-items:flex-end;}
+  .back-top{
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    color:#DDEAE6; text-decoration:none;
+    border:1px solid rgba(221,234,230,0.3);
+    padding:8px 14px; border-radius:var(--radius);
+  }
+  .back-top:hover{border-color:var(--accent); color:var(--accent-soft);}
+  .copyright{font-size:12px; color:#6E8F80;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    .layout{grid-template-columns:1fr; gap:0;}
+    .toc{
+      position:static; max-height:none; padding:0;
+      border:1px solid var(--line); background:var(--paper-raised);
+      margin-bottom:40px; padding:18px 20px;
+      display:none;
+    }
+    .toc.open{display:block;}
+    .nav-toggle{display:inline-block;}
+    .vitals{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width: 560px){
+    .hero{padding-top:56px;}
+    .vitals{grid-template-columns:1fr;}
+    .share-row{grid-template-columns:1fr; gap:4px;}
+    .footer-inner{flex-direction:column;}
+    .footer-links{align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="brand"><span class="brand-mark" aria-hidden="true"></span>Clinicly<span class="brand-tag">Doctor App</span></a>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="topbar-meta"><span class="dot" aria-hidden="true"></span>Policy active · updated Jul 28, 2026</div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="toc">Contents ▾</button>
+    </div>
+  </div>
+</div>
+
+<main id="top">
+  <div class="hero">
+    <p class="eyebrow">Privacy Policy — Doctor App</p>
+    <h1 class="hero-title">Your patients trust you. <em>You can trust us with your data.</em></h1>
+    <p class="hero-sub">This policy explains, in plain terms, exactly what Clinicly collects from you as a practitioner, how it's used to run your practice inside the app, and where it stops — no ad tracking, no data sales, no payment handling.</p>
+
+    <svg class="pulse" viewBox="0 0 1000 46" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 23 H360 L392 23 L410 6 L432 40 L452 12 L468 23 H1000" />
+      <circle class="pulse-dot" cx="392" cy="23" r="4"></circle>
+    </svg>
+  </div>
+
+  <div class="vitals" aria-label="Policy summary at a glance">
+    <div class="vital">
+      <span class="vital-label">Data sold</span>
+      <span class="vital-value accent">Never</span>
+      <span class="vital-note">Your information and patient data are not sold to any third party.</span>
+    </div>
+    <div class="vital">
+      <span class="vital-label">Payments handled</span>
+      <span class="vital-value">None</span>
+      <span class="vital-note">Clinicly never touches consultation fees or financial data.</span>
+    </div>
+    <div class="vital">
+      <span class="vital-label">Encryption</span>
+      <span class="vital-value">In transit + at rest</span>
+      <span class="vital-note">Applied to KYC documents, records, and credentials.</span>
+    </div>
+    <div class="vital">
+      <span class="vital-label">Calls recorded</span>
+      <span class="vital-value">No</span>
+      <span class="vital-note">Only session metadata is kept — not audio or video.</span>
+    </div>
+  </div>
+
+  <div class="layout">
+    <nav class="toc" id="toc" aria-label="Table of contents">
+      <p class="toc-title">On this page</p>
+      <ol id="tocList">
+        <li><a href="#s1"><span class="num">01</span>Introduction</a></li>
+        <li><a href="#s2"><span class="num">02</span>Information we collect</a></li>
+        <li><a href="#s3"><span class="num">03</span>How we use your information</a></li>
+        <li><a href="#s4"><span class="num">04</span>Payments</a></li>
+        <li><a href="#s5"><span class="num">05</span>Data sharing &amp; disclosure</a></li>
+        <li><a href="#s6"><span class="num">06</span>Data retention</a></li>
+        <li><a href="#s7"><span class="num">07</span>Data security</a></li>
+        <li><a href="#s8"><span class="num">08</span>Your responsibilities</a></li>
+        <li><a href="#s9"><span class="num">09</span>Children's privacy</a></li>
+        <li><a href="#s10"><span class="num">10</span>Your rights &amp; choices</a></li>
+        <li><a href="#s11"><span class="num">11</span>Third-party services</a></li>
+        <li><a href="#s12"><span class="num">12</span>Changes to this policy</a></li>
+        <li><a href="#s13"><span class="num">13</span>Contact us</a></li>
+      </ol>
+    </nav>
+
+    <article class="content">
+
+      <section class="policy-section" id="s1">
+        <div class="sec-head"><span class="sec-num mono">01</span><h2 class="sec-title">Introduction</h2></div>
+        <p>Clinicly ("we," "our," or "us") operates the Clinicly Doctor mobile application (the "App"), which connects licensed medical practitioners with patients for appointment booking, video consultations, and prescription management. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.</p>
+        <p>By using Clinicly, you agree to the collection and use of information as described in this policy.</p>
+      </section>
+
+      <section class="policy-section" id="s2">
+        <div class="sec-head"><span class="sec-num mono">02</span><h2 class="sec-title">Information we collect</h2></div>
+
+        <h3>2.1 Information you provide</h3>
+        <ul>
+          <li><strong>Account information</strong> — full name, email address, and password when you register.</li>
+          <li><strong>Profile information</strong> — profile photo, age, gender, years of experience, speciality, and bio, added when you set up your professional profile.</li>
+        </ul>
+
+        <h3>2.2 Identity verification (KYC) information</h3>
+        <p>To confirm your credentials as a licensed practitioner, we collect the documents you upload during KYC, including your medical degree, license to practice, and a government-issued ID. These documents are reviewed for approval before you can access the App.</p>
+
+        <h3>2.3 Patient information</h3>
+        <p>While using the App to provide care, you will access certain information about your patients, including their name, contact details, gender, age, date of birth, medical reports/files, and appointment history. This information is made available to you solely to enable you to conduct consultations and issue prescriptions.</p>
+
+        <h3>2.4 Appointment and scheduling information</h3>
+        <ul>
+          <li>Your availability, weekly schedule, and blocked-off dates.</li>
+          <li>Appointment requests, acceptances, rejections, and rejection reasons.</li>
+          <li>Appointment history, including completed, cancelled, and missed appointments.</li>
+        </ul>
+
+        <h3>2.5 Video consultation information</h3>
+        <p>We collect metadata about your video calls, such as start/end time, duration, and call status (completed, missed, or cancelled). We do not record or store the audio/video content of your consultations.</p>
+
+        <h3>2.6 Camera and photo library access</h3>
+        <p>If you choose to add or update your profile picture, the app requests access to your device's camera or photo library solely for that purpose. No images are accessed or uploaded without your explicit action.</p>
+
+        <h3>2.7 Automatically collected information</h3>
+        <p>Device identifiers, app version, push notification tokens, and basic diagnostic/crash data used to maintain app stability and performance.</p>
+      </section>
+
+      <section class="policy-section" id="s3">
+        <div class="sec-head"><span class="sec-num mono">03</span><h2 class="sec-title">How we use your information</h2></div>
+        <p>We use the collected information to:</p>
+        <ul>
+          <li>Verify your identity and medical credentials during KYC review.</li>
+          <li>Create and manage your Doctor account and professional profile.</li>
+          <li>Enable appointment scheduling, and the acceptance/rejection of requests.</li>
+          <li>Facilitate video consultations between you and your patients.</li>
+          <li>Enable the creation and delivery of digital prescriptions.</li>
+          <li>Display patient information relevant to the care you are providing.</li>
+          <li>Send notifications for new appointment requests, KYC status updates, reminders, and cancellations.</li>
+          <li>Maintain and improve the security, performance, and reliability of the App.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="s4">
+        <div class="sec-head"><span class="sec-num mono">04</span><h2 class="sec-title">Payments</h2></div>
+        <p>Clinicly does not process, store, or handle any consultation fees, payments, or in-app purchases between you and your patients. Clinicly does not collect, store, or have access to any payment card, banking, or financial account information.</p>
+      </section>
+
+      <section class="policy-section" id="s5">
+        <div class="sec-head"><span class="sec-num mono">05</span><h2 class="sec-title">Data sharing &amp; disclosure</h2></div>
+        <p>We do not sell your personal information or patient data. We may share limited information as follows:</p>
+        <div class="share-grid">
+          <div class="share-row">
+            <span class="who">With patients</span>
+            <span class="what">Your name, photo, speciality, experience, and bio are shown to patients to help them choose and book an appointment with you.</span>
+          </div>
+          <div class="share-row">
+            <span class="who">Verification partners</span>
+            <span class="what">KYC documents may be shared with third-party verification providers solely to confirm your credentials.</span>
+          </div>
+          <div class="share-row">
+            <span class="who">Service providers</span>
+            <span class="what">Cloud hosting, storage, and video/communication providers that enable real-time consultations, bound by their own data protection terms.</span>
+          </div>
+          <div class="share-row">
+            <span class="who">Legal requirements</span>
+            <span class="what">We may disclose information if required by law, regulation, or legal process.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="policy-section" id="s6">
+        <div class="sec-head"><span class="sec-num mono">06</span><h2 class="sec-title">Data retention</h2></div>
+        <p>We retain your account, profile, and appointment data for as long as your account remains active, or as needed to provide the service. Patient records and prescriptions accessed through the App may be retained beyond account closure where required by applicable healthcare recordkeeping laws. You may request deletion of your account and associated data at any time — see <a href="#s10">Section 10</a>.</p>
+      </section>
+
+      <section class="policy-section" id="s7">
+        <div class="sec-head"><span class="sec-num mono">07</span><h2 class="sec-title">Data security</h2></div>
+        <p>We take reasonable technical and organizational measures to protect your information from unauthorized access, alteration, or disclosure, including encryption of data in transit and at rest, and secure storage of authentication tokens.</p>
+        <div class="callout"><strong>Good to know —</strong> no method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security.</div>
+      </section>
+
+      <section class="policy-section" id="s8">
+        <div class="sec-head"><span class="sec-num mono">08</span><h2 class="sec-title">Your responsibilities as a doctor</h2></div>
+        <p>Patient medical reports, prescriptions, and personal details accessed through the App are provided to you solely for the purpose of delivering care to that patient. You agree not to download, export, share, or otherwise use patient data outside the scope of the consultation for which it was provided, except as required by applicable law or professional obligation.</p>
+      </section>
+
+      <section class="policy-section" id="s9">
+        <div class="sec-head"><span class="sec-num mono">09</span><h2 class="sec-title">Children's privacy</h2></div>
+        <p>Clinicly is intended for use by licensed medical practitioners who are adults. We do not knowingly collect personal information from children through this app.</p>
+      </section>
+
+      <section class="policy-section" id="s10">
+        <div class="sec-head"><span class="sec-num mono">10</span><h2 class="sec-title">Your rights &amp; choices</h2></div>
+        <p>You may:</p>
+        <ul>
+          <li>Access, update, or correct your account and profile information within the app.</li>
+          <li>Request deletion of your account and associated data by contacting us at <span class="placeholder">[Insert Contact Email]</span>, subject to legal or regulatory retention requirements.</li>
+          <li>Manage push notification preferences through your device settings, though disabling certain notifications may affect your ability to respond promptly to appointment requests.</li>
+        </ul>
+      </section>
+
+      <section class="policy-section" id="s11">
+        <div class="sec-head"><span class="sec-num mono">11</span><h2 class="sec-title">Third-party services</h2></div>
+        <p>The App integrates third-party services, including cloud hosting and video communication providers, that have their own privacy policies. We encourage you to review their terms independently.</p>
+      </section>
+
+      <section class="policy-section" id="s12">
+        <div class="sec-head"><span class="sec-num mono">12</span><h2 class="sec-title">Changes to this policy</h2></div>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with a revised "Last Updated" date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+      </section>
+
+      <section class="policy-section" id="s13">
+        <div class="sec-head"><span class="sec-num mono">13</span><h2 class="sec-title">Contact us</h2></div>
+        <p>If you have questions or concerns about this Privacy Policy or your data, contact us at:</p>
+        <p style="font-family:'IBM Plex Mono', monospace; font-size:15px; color:var(--teal); margin-top:-4px;">
+          <span class="placeholder">[Insert Contact Email]</span>
+        </p>
+      </section>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">Clinicly</p>
+      <p>Privacy Policy for the Clinicly Doctor App. This document applies to the doctor-facing side of the platform only.</p>
+    </div>
+    <div class="footer-links">
+      <span class="footer-contact">Questions? <a href="mailto:contact@example.com">[Insert Contact Email]</a></span>
+      <a href="#top" class="back-top">↑ Back to top</a>
+    </div>
+  </div>
+  <div class="footer-inner" style="padding-top:0; margin-top:-32px;">
+    <p class="copyright">© 2026 Clinicly. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // mobile TOC toggle
+  const navToggle = document.getElementById('navToggle');
+  const toc = document.getElementById('toc');
+  navToggle.addEventListener('click', () => {
+    const isOpen = toc.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.textContent = isOpen ? 'Contents ▴' : 'Contents ▾';
+  });
+
+  // close mobile TOC after selecting a link
+  document.querySelectorAll('#tocList a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 900) {
+        toc.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.textContent = 'Contents ▾';
+      }
+    });
+  });
+
+  // scroll-spy for TOC
+  const sections = document.querySelectorAll('.policy-section');
+  const tocLinks = document.querySelectorAll('#tocList a');
+  const linkFor = id => document.querySelector(`#tocList a[href="#${id}"]`);
+
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = linkFor(entry.target.id);
+      if (!link) return;
+      if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(sec => spyObserver.observe(sec));
+
+  // reveal-on-scroll for content sections
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  sections.forEach(sec => revealObserver.observe(sec));
+</script>
+
+</body>
+</html>
