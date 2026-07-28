@@ -16,11 +16,9 @@
     --teal:#0f5c52;
     --line:#e4e6e8;
     --bg-muted:#f7f8f8;
-    --maxw:760px;
+    --maxw:700px;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
 
   body{
     margin:0;
@@ -28,91 +26,41 @@
     color:var(--ink);
     font-family:'Inter', -apple-system, Segoe UI, sans-serif;
     font-size:16px;
-    line-height:1.65;
+    line-height:1.7;
     -webkit-font-smoothing:antialiased;
   }
 
   a{color:var(--teal);}
-  a:hover{text-decoration-color:var(--teal);}
   a:focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
-
-  header{
-    border-bottom:1px solid var(--line);
-  }
-  .header-inner{
-    max-width:var(--maxw); margin:0 auto;
-    padding:20px 24px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .logo{
-    font-family:'Source Serif 4', serif; font-weight:700; font-size:19px;
-    color:var(--ink); text-decoration:none;
-  }
-  .updated{
-    font-size:13px; color:var(--ink-soft);
-  }
 
   main{
     max-width:var(--maxw); margin:0 auto;
-    padding:56px 24px 80px;
+    padding:64px 24px 90px;
   }
 
   h1{
     font-family:'Source Serif 4', serif; font-weight:700;
-    font-size:34px; line-height:1.2;
-    margin:0 0 12px;
+    font-size:32px; line-height:1.25;
+    margin:0 0 8px;
     color:var(--ink);
   }
-  .lede{
-    font-size:16px; color:var(--ink-soft);
-    margin:0 0 40px;
-    max-width:56ch;
+  .updated{
+    font-size:13.5px; color:var(--ink-soft);
+    margin:0 0 36px;
   }
-
-  nav.toc{
-    background:var(--bg-muted);
-    border:1px solid var(--line);
-    border-radius:6px;
-    padding:18px 22px;
-    margin:0 0 48px;
-  }
-  nav.toc p{
-    margin:0 0 10px;
-    font-size:12px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase;
-    color:var(--ink-soft);
-  }
-  nav.toc ol{
-    margin:0; padding:0 0 0 18px;
-    columns:2;
-    column-gap:24px;
-  }
-  nav.toc li{
-    font-size:14px; margin-bottom:7px;
-    break-inside:avoid;
-  }
-  nav.toc a{
-    color:var(--ink); text-decoration:none;
-  }
-  nav.toc a:hover{color:var(--teal); text-decoration:underline;}
-
-  section{
-    padding:32px 0;
-    border-top:1px solid var(--line);
-  }
-  section:first-of-type{border-top:none; padding-top:0;}
 
   h2{
     font-family:'Source Serif 4', serif; font-weight:600;
-    font-size:22px; color:var(--ink);
-    margin:0 0 14px;
-    scroll-margin-top:20px;
+    font-size:20px; color:var(--ink);
+    margin:34px 0 12px;
   }
+  h2:first-of-type{margin-top:0;}
   h2 .num{
     color:var(--teal); font-weight:600; margin-right:6px;
   }
   h3{
     font-size:15px; font-weight:600; color:var(--ink);
-    margin:22px 0 8px;
+    margin:20px 0 8px;
   }
   p{
     margin:0 0 14px; color:var(--ink);
@@ -151,182 +99,119 @@
     width:170px;
   }
 
-  footer{
-    border-top:1px solid var(--line);
-    background:var(--bg-muted);
+  hr{
+    border:none; border-top:1px solid var(--line);
+    margin:44px 0 28px;
   }
-  .footer-inner{
-    max-width:var(--maxw); margin:0 auto;
-    padding:32px 24px;
-    display:flex; justify-content:space-between; align-items:center;
-    flex-wrap:wrap; gap:12px;
+  .footer-note{
+    font-size:13px; color:var(--ink-soft);
   }
-  .footer-inner p{margin:0; font-size:13px; color:var(--ink-soft);}
-  .back-top{font-size:13px; text-decoration:none;}
 
   @media (max-width:560px){
-    nav.toc ol{columns:1;}
-    h1{font-size:28px;}
-    .footer-inner{flex-direction:column; align-items:flex-start;}
+    main{padding:44px 20px 70px;}
+    h1{font-size:26px;}
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="#top" class="logo">Clinicly</a>
-    <span class="updated">Last updated: July 28, 2026</span>
-  </div>
-</header>
+<main>
+  <h1>Privacy Policy — Clinicly Doctor App</h1>
+  <p class="updated">Last updated: July 28, 2026</p>
 
-<main id="top">
-  <h1>Privacy Policy — Doctor App</h1>
-  <p class="lede">This policy explains what information Clinicly collects from doctors using the app, how it's used, and your rights regarding that information.</p>
+  <h2><span class="num">1.</span>Introduction</h2>
+  <p>Clinicly ("we," "our," or "us") operates the Clinicly Doctor mobile application (the "App"), which connects licensed medical practitioners with patients for appointment booking, video consultations, and prescription management. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.</p>
+  <p>By using Clinicly, you agree to the collection and use of information as described in this policy.</p>
 
-  <nav class="toc" aria-label="Table of contents">
-    <p>Contents</p>
-    <ol>
-      <li><a href="#s1">Introduction</a></li>
-      <li><a href="#s2">Information we collect</a></li>
-      <li><a href="#s3">How we use your information</a></li>
-      <li><a href="#s4">Payments</a></li>
-      <li><a href="#s5">Data sharing &amp; disclosure</a></li>
-      <li><a href="#s6">Data retention</a></li>
-      <li><a href="#s7">Data security</a></li>
-      <li><a href="#s8">Your responsibilities</a></li>
-      <li><a href="#s9">Children's privacy</a></li>
-      <li><a href="#s10">Your rights &amp; choices</a></li>
-      <li><a href="#s11">Third-party services</a></li>
-      <li><a href="#s12">Changes to this policy</a></li>
-      <li><a href="#s13">Contact us</a></li>
-    </ol>
-  </nav>
+  <h2><span class="num">2.</span>Information we collect</h2>
 
-  <section id="s1">
-    <h2><span class="num">1.</span>Introduction</h2>
-    <p>Clinicly ("we," "our," or "us") operates the Clinicly Doctor mobile application (the "App"), which connects licensed medical practitioners with patients for appointment booking, video consultations, and prescription management. This Privacy Policy explains what information we collect, how we use it, and your rights regarding that information.</p>
-    <p>By using Clinicly, you agree to the collection and use of information as described in this policy.</p>
-  </section>
+  <h3>2.1 Information you provide</h3>
+  <ul>
+    <li><strong>Account information</strong> — full name, email address, and password when you register.</li>
+    <li><strong>Profile information</strong> — profile photo, age, gender, years of experience, speciality, and bio, added when you set up your professional profile.</li>
+  </ul>
 
-  <section id="s2">
-    <h2><span class="num">2.</span>Information we collect</h2>
+  <h3>2.2 Identity verification (KYC) information</h3>
+  <p>To confirm your credentials as a licensed practitioner, we collect the documents you upload during KYC, including your medical degree, license to practice, and a government-issued ID. These documents are reviewed for approval before you can access the App.</p>
 
-    <h3>2.1 Information you provide</h3>
-    <ul>
-      <li><strong>Account information</strong> — full name, email address, and password when you register.</li>
-      <li><strong>Profile information</strong> — profile photo, age, gender, years of experience, speciality, and bio, added when you set up your professional profile.</li>
-    </ul>
+  <h3>2.3 Patient information</h3>
+  <p>While using the App to provide care, you will access certain information about your patients, including their name, contact details, gender, age, date of birth, medical reports/files, and appointment history. This information is made available to you solely to enable you to conduct consultations and issue prescriptions.</p>
 
-    <h3>2.2 Identity verification (KYC) information</h3>
-    <p>To confirm your credentials as a licensed practitioner, we collect the documents you upload during KYC, including your medical degree, license to practice, and a government-issued ID. These documents are reviewed for approval before you can access the App.</p>
+  <h3>2.4 Appointment and scheduling information</h3>
+  <ul>
+    <li>Your availability, weekly schedule, and blocked-off dates.</li>
+    <li>Appointment requests, acceptances, rejections, and rejection reasons.</li>
+    <li>Appointment history, including completed, cancelled, and missed appointments.</li>
+  </ul>
 
-    <h3>2.3 Patient information</h3>
-    <p>While using the App to provide care, you will access certain information about your patients, including their name, contact details, gender, age, date of birth, medical reports/files, and appointment history. This information is made available to you solely to enable you to conduct consultations and issue prescriptions.</p>
+  <h3>2.5 Video consultation information</h3>
+  <p>We collect metadata about your video calls, such as start/end time, duration, and call status (completed, missed, or cancelled). We do not record or store the audio/video content of your consultations.</p>
 
-    <h3>2.4 Appointment and scheduling information</h3>
-    <ul>
-      <li>Your availability, weekly schedule, and blocked-off dates.</li>
-      <li>Appointment requests, acceptances, rejections, and rejection reasons.</li>
-      <li>Appointment history, including completed, cancelled, and missed appointments.</li>
-    </ul>
+  <h3>2.6 Camera and photo library access</h3>
+  <p>If you choose to add or update your profile picture, the app requests access to your device's camera or photo library solely for that purpose. No images are accessed or uploaded without your explicit action.</p>
 
-    <h3>2.5 Video consultation information</h3>
-    <p>We collect metadata about your video calls, such as start/end time, duration, and call status (completed, missed, or cancelled). We do not record or store the audio/video content of your consultations.</p>
+  <h3>2.7 Automatically collected information</h3>
+  <p>Device identifiers, app version, push notification tokens, and basic diagnostic/crash data used to maintain app stability and performance.</p>
 
-    <h3>2.6 Camera and photo library access</h3>
-    <p>If you choose to add or update your profile picture, the app requests access to your device's camera or photo library solely for that purpose. No images are accessed or uploaded without your explicit action.</p>
+  <h2><span class="num">3.</span>How we use your information</h2>
+  <p>We use the collected information to:</p>
+  <ul>
+    <li>Verify your identity and medical credentials during KYC review.</li>
+    <li>Create and manage your Doctor account and professional profile.</li>
+    <li>Enable appointment scheduling, and the acceptance/rejection of requests.</li>
+    <li>Facilitate video consultations between you and your patients.</li>
+    <li>Enable the creation and delivery of digital prescriptions.</li>
+    <li>Display patient information relevant to the care you are providing.</li>
+    <li>Send notifications for new appointment requests, KYC status updates, reminders, and cancellations.</li>
+    <li>Maintain and improve the security, performance, and reliability of the App.</li>
+  </ul>
 
-    <h3>2.7 Automatically collected information</h3>
-    <p>Device identifiers, app version, push notification tokens, and basic diagnostic/crash data used to maintain app stability and performance.</p>
-  </section>
+  <h2><span class="num">4.</span>Payments</h2>
+  <p>Clinicly does not process, store, or handle any consultation fees, payments, or in-app purchases between you and your patients. Clinicly does not collect, store, or have access to any payment card, banking, or financial account information.</p>
 
-  <section id="s3">
-    <h2><span class="num">3.</span>How we use your information</h2>
-    <p>We use the collected information to:</p>
-    <ul>
-      <li>Verify your identity and medical credentials during KYC review.</li>
-      <li>Create and manage your Doctor account and professional profile.</li>
-      <li>Enable appointment scheduling, and the acceptance/rejection of requests.</li>
-      <li>Facilitate video consultations between you and your patients.</li>
-      <li>Enable the creation and delivery of digital prescriptions.</li>
-      <li>Display patient information relevant to the care you are providing.</li>
-      <li>Send notifications for new appointment requests, KYC status updates, reminders, and cancellations.</li>
-      <li>Maintain and improve the security, performance, and reliability of the App.</li>
-    </ul>
-  </section>
+  <h2><span class="num">5.</span>Data sharing &amp; disclosure</h2>
+  <p>We do not sell your personal information or patient data. We may share limited information as follows:</p>
+  <table>
+    <tr><th>With patients</th><td>Your name, photo, speciality, experience, and bio are shown to patients to help them choose and book an appointment with you.</td></tr>
+    <tr><th>Verification partners</th><td>KYC documents may be shared with third-party verification providers solely to confirm your credentials.</td></tr>
+    <tr><th>Service providers</th><td>Cloud hosting, storage, and video/communication providers that enable real-time consultations, bound by their own data protection terms.</td></tr>
+    <tr><th>Legal requirements</th><td>We may disclose information if required by law, regulation, or legal process.</td></tr>
+  </table>
 
-  <section id="s4">
-    <h2><span class="num">4.</span>Payments</h2>
-    <p>Clinicly does not process, store, or handle any consultation fees, payments, or in-app purchases between you and your patients. Clinicly does not collect, store, or have access to any payment card, banking, or financial account information.</p>
-  </section>
+  <h2><span class="num">6.</span>Data retention</h2>
+  <p>We retain your account, profile, and appointment data for as long as your account remains active, or as needed to provide the service. Patient records and prescriptions accessed through the App may be retained beyond account closure where required by applicable healthcare recordkeeping laws. You may request deletion of your account and associated data at any time (see Section 10).</p>
 
-  <section id="s5">
-    <h2><span class="num">5.</span>Data sharing &amp; disclosure</h2>
-    <p>We do not sell your personal information or patient data. We may share limited information as follows:</p>
-    <table>
-      <tr><th>With patients</th><td>Your name, photo, speciality, experience, and bio are shown to patients to help them choose and book an appointment with you.</td></tr>
-      <tr><th>Verification partners</th><td>KYC documents may be shared with third-party verification providers solely to confirm your credentials.</td></tr>
-      <tr><th>Service providers</th><td>Cloud hosting, storage, and video/communication providers that enable real-time consultations, bound by their own data protection terms.</td></tr>
-      <tr><th>Legal requirements</th><td>We may disclose information if required by law, regulation, or legal process.</td></tr>
-    </table>
-  </section>
+  <h2><span class="num">7.</span>Data security</h2>
+  <p>We take reasonable technical and organizational measures to protect your information from unauthorized access, alteration, or disclosure, including encryption of data in transit and at rest, and secure storage of authentication tokens.</p>
+  <div class="note">No method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security.</div>
 
-  <section id="s6">
-    <h2><span class="num">6.</span>Data retention</h2>
-    <p>We retain your account, profile, and appointment data for as long as your account remains active, or as needed to provide the service. Patient records and prescriptions accessed through the App may be retained beyond account closure where required by applicable healthcare recordkeeping laws. You may request deletion of your account and associated data at any time — see <a href="#s10">Section 10</a>.</p>
-  </section>
+  <h2><span class="num">8.</span>Your responsibilities as a doctor</h2>
+  <p>Patient medical reports, prescriptions, and personal details accessed through the App are provided to you solely for the purpose of delivering care to that patient. You agree not to download, export, share, or otherwise use patient data outside the scope of the consultation for which it was provided, except as required by applicable law or professional obligation.</p>
 
-  <section id="s7">
-    <h2><span class="num">7.</span>Data security</h2>
-    <p>We take reasonable technical and organizational measures to protect your information from unauthorized access, alteration, or disclosure, including encryption of data in transit and at rest, and secure storage of authentication tokens.</p>
-    <div class="note">No method of electronic transmission or storage is completely secure, and we cannot guarantee absolute security.</div>
-  </section>
+  <h2><span class="num">9.</span>Children's privacy</h2>
+  <p>Clinicly is intended for use by licensed medical practitioners who are adults. We do not knowingly collect personal information from children through this app.</p>
 
-  <section id="s8">
-    <h2><span class="num">8.</span>Your responsibilities as a doctor</h2>
-    <p>Patient medical reports, prescriptions, and personal details accessed through the App are provided to you solely for the purpose of delivering care to that patient. You agree not to download, export, share, or otherwise use patient data outside the scope of the consultation for which it was provided, except as required by applicable law or professional obligation.</p>
-  </section>
+  <h2><span class="num">10.</span>Your rights &amp; choices</h2>
+  <p>You may:</p>
+  <ul>
+    <li>Access, update, or correct your account and profile information within the app.</li>
+    <li>Request deletion of your account and associated data by contacting us at <a href="mailto:contact@techparser.io">contact@techparser.io</a>, subject to legal or regulatory retention requirements.</li>
+    <li>Manage push notification preferences through your device settings, though disabling certain notifications may affect your ability to respond promptly to appointment requests.</li>
+  </ul>
 
-  <section id="s9">
-    <h2><span class="num">9.</span>Children's privacy</h2>
-    <p>Clinicly is intended for use by licensed medical practitioners who are adults. We do not knowingly collect personal information from children through this app.</p>
-  </section>
+  <h2><span class="num">11.</span>Third-party services</h2>
+  <p>The App integrates third-party services, including cloud hosting and video communication providers, that have their own privacy policies. We encourage you to review their terms independently.</p>
 
-  <section id="s10">
-    <h2><span class="num">10.</span>Your rights &amp; choices</h2>
-    <p>You may:</p>
-    <ul>
-      <li>Access, update, or correct your account and profile information within the app.</li>
-      <li>Request deletion of your account and associated data by contacting us at <span class="placeholder">[Insert Contact Email]</span>, subject to legal or regulatory retention requirements.</li>
-      <li>Manage push notification preferences through your device settings, though disabling certain notifications may affect your ability to respond promptly to appointment requests.</li>
-    </ul>
-  </section>
+  <h2><span class="num">12.</span>Changes to this policy</h2>
+  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with a revised "Last Updated" date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
 
-  <section id="s11">
-    <h2><span class="num">11.</span>Third-party services</h2>
-    <p>The App integrates third-party services, including cloud hosting and video communication providers, that have their own privacy policies. We encourage you to review their terms independently.</p>
-  </section>
+  <h2><span class="num">13.</span>Contact us</h2>
+  <p>If you have questions or concerns about this Privacy Policy or your data, contact us at:</p>
+  <p><a href="mailto:contact@techparser.io">contact@techparser.io</a></p>
 
-  <section id="s12">
-    <h2><span class="num">12.</span>Changes to this policy</h2>
-    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with a revised "Last Updated" date. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
-  </section>
-
-  <section id="s13">
-    <h2><span class="num">13.</span>Contact us</h2>
-    <p>If you have questions or concerns about this Privacy Policy or your data, contact us at:</p>
-    <p><span class="placeholder">contact@techparser.io</span></p>
-  </section>
-
+  <hr>
+  <p class="footer-note">© 2026 Clinicly. All rights reserved.</p>
 </main>
-
-<footer>
-  <div class="footer-inner">
-    <p>© 2026 Clinicly. All rights reserved.</p>
-    <a href="#top" class="back-top">Back to top ↑</a>
-  </div>
-</footer>
 
 </body>
 </html>
